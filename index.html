@@ -20,11 +20,29 @@
       </ul>
     </div>
     <div>
-        <form>
+        <form method="POST" action="/randomAction" data-form='form'>
             <input type='text' name='email'/>
+            <input type="submit" value='submit' />
         </form>
     </div>
-    <div class="footer">
+    <div >
+        <select name="lang" class="lang-list">
+            <option value="php">PHP</option>
+            <option value="java">JAVA</option>
+            <option value="c">C</option>
+        </select>
+    </div>
+    <div>
+     <form>
+         <input type="checkbox" value='ar' name='language'>
+         <input type="checkbox" value='en' name='language'/>
+         <input type="checkbox" value='fr' name='language'>
+         <input type="radio" name="car" value='mercedes'>
+     </form>
+    </div>
+    <div class="footer" data-test='test-footer'>
+        <button>button-1</button>
+         <button>button-2</button>
     </div>
   </body>
 </html>
