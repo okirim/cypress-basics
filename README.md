@@ -2,7 +2,7 @@
 
 ## config cypress
 
-### in cypress.json
+#### in cypress.json
 
 ```
 {
@@ -10,13 +10,13 @@
 }
 ```
 
-### in your package.json 
+#### in your package.json 
 ```
  "scripts": {
     "test": "cypress open"
   }
 ```
-### in your cypress/integration folder, create new file demo.js
+#### in your cypress/integration folder, create new file demo.js
 
 for auto-completion add at the top of the file or install `npm i --save-dev @types/cypress`
 ```
@@ -24,7 +24,7 @@ for auto-completion add at the top of the file or install `npm i --save-dev @typ
 
 ```
 
-### eslint config
+#### eslint config
 
 install eslint plugin for cypress `npm install eslint-plugin-cypress --save-dev`
 
@@ -41,7 +41,7 @@ create .eslintrc.json file and add :
     ]
 }
 ```
-### run your first code
+#### run your first code
 
 in your demo.js file
 ```
