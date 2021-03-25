@@ -56,16 +56,16 @@ run `npm test`
 
 ```
  beforeAll(() => {
-    [//]: # (run before every 'test block')
+    [comment]: <> (run before every 'test block')
 })
 before(() => {
-    [//]: # (run before 'test block' once)
+    [comment]: <> (run before 'test block' once)
 })
 after(() => {
-   [//]: # ( run after 'test block' once)
+   [comment]: <> ( run after 'test block' once)
 })
 afterAll(() => {
-    [//]: # (run after all 'test block')
+    [comment]: <> (run after all 'test block')
 })
 ```
 update our test file
@@ -82,36 +82,36 @@ update our test file
 })
 describe("selectors", () => {
     it("select html elements", () => {
-    [//]: # (class)
+    [comment]: <> (class)
         cy.get('.container');
 
-    [//]: # (id)
+    [comment]: <> (id)
         cy.get('#list');
 
-    [//]: # (children)
+    [comment]: <> (children)
         cy.get('#list > li');
         cy.get('#list').find('li');
 
-    [//]: # (first child)
+    [comment]: <> (first child)
         cy.get('#list' > li).first();
 
-    [//]: # (last child)
+    [comment]: <> (last child)
         cy.get('#list' > li).first();
 
-    [//]: # (second child)
+    [comment]: <> (second child)
         cy.get('#list' > li).eq(1);
 
-    [//]: # (input attribute)
+    [comment]: <> (input attribute)
         cy.get([name='email']);
-    [//]: # (data attribute)
+    [comment]: <> (data attribute)
         cy.get("[data-test='test-footer']")
 
-    [//]: # (siblings next)
+    [comment]: <> (siblings next)
         cy.get('.header').next();
         cy.get('.header').nextAll();
         cy.get('.header').nextUntil('footer');
 
-    [//]: # (siblings prev)
+    [comment]: <> (siblings prev)
         cy.get('footer').prev();
         cy.get('footer').prevAll();
         cy.get('footer').prevUntil('footer');
@@ -126,9 +126,9 @@ describe("selectors", () => {
 describe("actions", () => {
     it("simulate click action", () => {
         cy.get('a').first().click();
-    [//]: # (or)    
+    [comment]: <> (or)    
         cy.get("a[href*='cypress-tutorial']").click()
-    [//]: # (click all button)
+    [comment]: <> (click all button)
         cy.get("button").click({multiple:true}); 
     })
    
@@ -148,9 +148,9 @@ describe("actions", () => {
 describe("actions", () => {
     it("simulate type action", () => {
        cy.get("[name='email']").type('rand@gmail.com')
-    [//]: # (or)
+    [comment]: <> (or)
         cy.get("[name='email']").type('rand@gmail.com',{force:true});
-    [//]: # (submit the form)
+    [comment]: <> (submit the form)
         cy.get("[type='submit']").click();
 
 })
@@ -168,10 +168,10 @@ describe("actions", () => {
 ```
 describe("actions", () => {
     it("simulate select action", () => {
-    [//]: # (select the value)
+    [comment]: <> (select the value)
          cy.get('.lang-list').select('php');
 
-    [//]: # (select the text)
+    [comment]: <> (select the text)
          cy.get('.lang-list').select('PHP');
 })
 ```
@@ -180,14 +180,14 @@ describe("actions", () => {
 ```
 describe("actions", () => {
     it("simulate select checkbox and radioButton", () => {
-    [//]: # (checkbox)
-    [//]: # (check the value)
+    [comment]: <> (checkbox)
+    [comment]: <> (check the value)
         cy.get("[value='en']").check();
     
-    [//]: # (uncheck the value)
+    [comment]: <> (uncheck the value)
         cy.get("[value='fr']").uncheck();
 
-    [//]: # (radio-button)
+    [comment]: <> (radio-button)
         cy.get("[type='radio']").check();
         cy.get("[type='radio']").uncheck();
 })
@@ -206,10 +206,10 @@ describe("actions", () => {
 ```
 describe("actions", () => {
     it("simulate focus and blur", () => {
-    [//]: # (click)    
+    [comment]: <> (click)    
        cy.get('button').first().trigger('click');
 
-    [//]: # ( mouse events)
+    [comment]: <> ( mouse events)
        cy.get('button').first().trigger('mouseover');
        cy.get('button').first().trigger('mouseenter');
        cy.get('button').first().trigger('mousemove');
@@ -232,9 +232,9 @@ describe("assertions", () => {
 ```
 describe("assertions", () => {
     it("should have text", () => {
-    [//]: # (this will fail)
+    [comment]: <> (this will fail)
         cy.get('body').should('have.text','Cypress tutorial');
-    [//]: # (with (have.text) we should select the specific element that contain the text)  
+    [comment]: <> (with (have.text) we should select the specific element that contain the text)  
        cy.get('.header > a').should('have.text','Cypress tutorial');
 })
 ```
@@ -242,9 +242,9 @@ describe("assertions", () => {
 ```
 describe("assertions", () => {
     it("hidden and visible", () => {
-    [//]: # (visible)
+    [comment]: <> (visible)
         cy.get('#visible').should('be.visible')
-    [//]: # (hidden)   
+    [comment]: <> (hidden)   
         cy.get('#hidden').should('not.be.visible')
 })
 ```
@@ -266,9 +266,9 @@ describe("assertions", () => {
 ```
 describe("assertions", () => {
     it("have disabled attribute or not", () => {
-     [//]: # (enabled element)    
+     [comment]: <> (enabled element)    
         cy.get("[value='mercedes']").should('be.enabled');
-    [//]: # (disabled element)  
+    [comment]: <> (disabled element)  
         cy.get("[value='cz']").should('be.enabled');
 })
 ```
@@ -321,13 +321,13 @@ describe("commands", () => {
 ```
 describe("commands", () => {
     it("handle cookies", () => {
-    [//]: # (get cookie created in index.html) 
+    [comment]: <> (get cookie created in index.html) 
         cy.getCookie('username').should('have.property','value','John Doe')
 
-    [//]: # (set cookie, we use have property to access the cookie value because is returned as an object)
+    [comment]: <> (set cookie, we use have property to access the cookie value because is returned as an object)
         cy.setCookie('currentUser','okirim').should('have.property','value','okirim');
 
-    [//]: # (get cookies) 
+    [comment]: <> (get cookies) 
         cy.getCookies().should('have.length',2);
 })
 })
@@ -336,7 +336,7 @@ describe("commands", () => {
 ```
 describe("commands", () => {
     it("handle cookies", () => {
-      [//]: # (to test your website in a specific time)
+      [comment]: <> (to test your website in a specific time)
          name
          const data=new Date(2020,04,10);
          cy.clock(date);
@@ -353,11 +353,11 @@ describe("commands", () => {
             age:27,
             country:'Algeria'
         }
-    [//]: # (we can not do that)
+    [comment]: <> (we can not do that)
 
         user.should('have.property','name','okirim');
          
-    [//]: # (we have wrap it before doing any assertion)
+    [comment]: <> (we have wrap it before doing any assertion)
 
         cy.wrap(user).should('have.property','name','okirim');    
      
