@@ -1,6 +1,6 @@
-# Basics
+# A-Basics
 
-## config cypress
+## 1-Config cypress
 
 #### in cypress.json
 
@@ -10,7 +10,7 @@
 }
 ```
 
-#### in your package.json 
+#### in your cypress.json 
 ```
  "scripts": {
     "test": "cypress open"
@@ -52,20 +52,20 @@ describe("launch the browser", () => {
 ```
 run `npm test`
 
-## hooks 
+## 2-hooks 
 
 ```
  beforeAll(() => {
-    [//]: #(run before every 'test block')
+    [//]: # (run before every 'test block')
 })
 before(() => {
-    [//]: #(run before 'test block' once)
+    [//]: # (run before 'test block' once)
 })
 after(() => {
-   [//]: #( run after 'test block' once)
+   [//]: # ( run after 'test block' once)
 })
 afterAll(() => {
-    [//]: #(run after all 'test block')
+    [//]: # (run after all 'test block')
 })
 ```
 update our test file
@@ -75,43 +75,43 @@ update our test file
      cy.visit("/");
 })
 ```
-## selectors
+## 3-Selectors
 ```
  beforeAll(() => {
      cy.visit("/");
 })
 describe("selectors", () => {
     it("select html elements", () => {
-    [//]: #(class)
+    [//]: # (class)
         cy.get('.container');
 
-    [//]: #(id)
+    [//]: # (id)
         cy.get('#list');
 
-    [//]: #(children)
+    [//]: # (children)
         cy.get('#list > li');
         cy.get('#list').find('li');
 
-    [//]: #(first child)
+    [//]: # (first child)
         cy.get('#list' > li).first();
 
-    [//]: #(last child)
+    [//]: # (last child)
         cy.get('#list' > li).first();
 
-    [//]: #(second child)
+    [//]: # (second child)
         cy.get('#list' > li).eq(1);
 
-    [//]: #(input attribute)
+    [//]: # (input attribute)
         cy.get([name='email']);
-    [//]: #(data attribute)
+    [//]: # (data attribute)
         cy.get("[data-test='test-footer']")
 
-    [//]: #(siblings next)
+    [//]: # (siblings next)
         cy.get('.header').next();
         cy.get('.header').nextAll();
         cy.get('.header').nextUntil('footer');
 
-    [//]: #(siblings prev)
+    [//]: # (siblings prev)
         cy.get('footer').prev();
         cy.get('footer').prevAll();
         cy.get('footer').prevUntil('footer');
@@ -119,16 +119,16 @@ describe("selectors", () => {
     })
 })
 ```
-## actions
+## 4-Actions
 
 #### click
 ```
 describe("actions", () => {
     it("simulate click action", () => {
         cy.get('a').first().click();
-    [//]: #(or)    
+    [//]: # (or)    
         cy.get("a[href*='cypress-tutorial']").click()
-    [//]: #(click all button)
+    [//]: # (click all button)
         cy.get("button").click({multiple:true}); 
     })
    
@@ -148,9 +148,9 @@ describe("actions", () => {
 describe("actions", () => {
     it("simulate type action", () => {
        cy.get("[name='email']").type('rand@gmail.com')
-    [//]: #(or)
+    [//]: # (or)
         cy.get("[name='email']").type('rand@gmail.com',{force:true});
-    [//]: #(submit the form)
+    [//]: # (submit the form)
         cy.get("[type='submit']").click();
 
 })
@@ -168,10 +168,10 @@ describe("actions", () => {
 ```
 describe("actions", () => {
     it("simulate select action", () => {
-    [//]: #(select the value)
+    [//]: # (select the value)
          cy.get('.lang-list').select('php');
 
-    [//]: #(select the text)
+    [//]: # (select the text)
          cy.get('.lang-list').select('PHP');
 })
 ```
@@ -180,14 +180,14 @@ describe("actions", () => {
 ```
 describe("actions", () => {
     it("simulate select checkbox and radioButton", () => {
-    [//]: #(checkbox)
-    [//]: #(check the value)
+    [//]: # (checkbox)
+    [//]: # (check the value)
         cy.get("[value='en']").check();
     
-    [//]: #(uncheck the value)
+    [//]: # (uncheck the value)
         cy.get("[value='fr']").uncheck();
 
-    [//]: #(radio-button)
+    [//]: # (radio-button)
         cy.get("[type='radio']").check();
         cy.get("[type='radio']").uncheck();
 })
@@ -206,10 +206,10 @@ describe("actions", () => {
 ```
 describe("actions", () => {
     it("simulate focus and blur", () => {
-    [//]: #(click)    
+    [//]: # (click)    
        cy.get('button').first().trigger('click');
 
-    [//]: #( mouse events)
+    [//]: # ( mouse events)
        cy.get('button').first().trigger('mouseover');
        cy.get('button').first().trigger('mouseenter');
        cy.get('button').first().trigger('mousemove');
@@ -219,7 +219,7 @@ describe("actions", () => {
 
 })
 ```
-## assertion
+## 5-Assertions
 #### should('contain')
 ```
 describe("assertions", () => {
@@ -232,9 +232,9 @@ describe("assertions", () => {
 ```
 describe("assertions", () => {
     it("should have text", () => {
-    [//]: #(this will fail)
+    [//]: # (this will fail)
         cy.get('body').should('have.text','Cypress tutorial');
-    [//]: #(with (have.text) we should select the specific element that contain the text)  
+    [//]: # (with (have.text) we should select the specific element that contain the text)  
        cy.get('.header > a').should('have.text','Cypress tutorial');
 })
 ```
@@ -242,9 +242,9 @@ describe("assertions", () => {
 ```
 describe("assertions", () => {
     it("hidden and visible", () => {
-    [//]: #(visible)
+    [//]: # (visible)
         cy.get('#visible').should('be.visible')
-    [//]: #(hidden)   
+    [//]: # (hidden)   
         cy.get('#hidden').should('not.be.visible')
 })
 ```
@@ -266,9 +266,9 @@ describe("assertions", () => {
 ```
 describe("assertions", () => {
     it("have disabled attribute or not", () => {
-     [//]: #(enabled element)    
+     [//]: # (enabled element)    
         cy.get("[value='mercedes']").should('be.enabled');
-    [//]: #(disabled element)  
+    [//]: # (disabled element)  
         cy.get("[value='cz']").should('be.enabled');
 })
 ```
@@ -284,5 +284,83 @@ describe("assertions", () => {
 describe("assertions", () => {
     it("have value", () => {
         cy.get("[name='email']")type('kadiro@okirim.com').should('have.value','kadiro@okirim.com');
+})
+```
+
+## 6-Commands
+#### url()
+```
+describe("commands", () => {
+    it("get url", () => {
+        cy.url().should('contain','index.html');
+})
+```
+#### title()
+```
+describe("commands", () => {
+    it("get title", () => {
+        cy.title().should('eql','cypress');
+})
+```
+#### go()
+```
+describe("commands", () => {
+    it("navigate", () => {
+
+        cy.get('[href="/home.html"]').click();
+        cy.title().should('eql','home');
+
+        cy.go('back');
+        cy.title().should('eql','cypress');
+
+        cy.go('forward');
+        cy.title().should('eql','home');
+})
+```
+#### Cookie()
+```
+describe("commands", () => {
+    it("handle cookies", () => {
+    [//]: # (get cookie created in index.html) 
+        cy.getCookie('username').should('have.property','value','John Doe')
+
+    [//]: # (set cookie, we use have property to access the cookie value because is returned as an object)
+        cy.setCookie('currentUser','okirim').should('have.property','value','okirim');
+
+    [//]: # (get cookies) 
+        cy.getCookies().should('have.length',2);
+})
+})
+```
+#### clock()
+```
+describe("commands", () => {
+    it("handle cookies", () => {
+      [//]: # (to test your website in a specific time)
+         name
+         const data=new Date(2020,04,10);
+         cy.clock(date);
+         cy.visit(/'home.html');
+})
+})
+```
+#### wrap()
+```
+describe("commands", () => {
+    it("wrap data", () => {
+        const user={
+            name:'okirim',
+            age:27,
+            country:'Algeria'
+        }
+    [//]: # (we can not do that)
+
+        user.should('have.property','name','okirim');
+         
+    [//]: # (we have wrap it before doing any assertion)
+
+        cy.wrap(user).should('have.property','name','okirim');    
+     
+})
 })
 ```

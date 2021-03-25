@@ -3,13 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title></title>
+    <title>cypress</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="" />
   </head>
   <body>
     <div class="header">
+       <a href="/home.html">home</a>
        <a href="https://github.com/okirim/cypress-tutorial">Cypress tutorial</a>
     </div>
     <div class="container">
@@ -44,9 +45,12 @@
     </div>
     <h1 id='hidden' style='display: none;'>hidden</h1>
     <h1 id='visible'>visible</h1>
-    < class="footer" data-test='test-footer'>
+    <class="footer" data-test='test-footer'>
         <button>button-1</button>
          <button>button-2</button>
     </h1>
+    <script>
+      document.cookie = "username=John Doe";
+    </script>
   </body>
 </html>
