@@ -676,3 +676,19 @@ describe("DELETE REQUEST", () => {
   });
 });
 ```
+#### SECURE API
+
+```
+describe("GET REQUEST", () => {
+  it("GET REQUEST : unAuthorized url", () => {
+    cy.request("https://random-url",{
+        'auth': {
+           'bearer': 'token'
+          }
+    }).then((res) => {
+
+      expect(res.status).to.equal(200);
+    });
+  });
+});
+```
