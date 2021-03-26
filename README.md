@@ -423,7 +423,7 @@ describe("commands", () => {
 })
 })
 ```
-#### expect() [learn more ](https://www.chaijs.com/api/bdd/)
+#### expect()  [docs](https://www.chaijs.com/api/bdd/)
 
 ```
 describe("commands", () => {
@@ -436,8 +436,6 @@ describe("commands", () => {
 
     expect([1, 2]).to.be.an('array').that.does.not.include(3);
 
-
-  
    }) 
      
 })
@@ -493,7 +491,7 @@ describe('synchronous',()=>{
 
 ## 8-Variables
 
-#### set variable as aliases
+#### create variable
 
 ```
 describe('variables',()=>{
@@ -538,15 +536,18 @@ describe('variables',()=>{
 ```
 ## 9-fixtures
 
-##### to access the data in Cypress (json, csv, html, text, jpg, png, jpeg, jpg, tif, gif) we place our file in the fixtures folder and access it like this :
+##### to access the data in Cypress (json, csv, html, text, jpg, png, jpeg, jpg, tif, gif) 
 
-[//]: # (we create car.json file in the fixtures folder)
+
+create `car.json` file and add :
 `
 {
     "brand":"BMW",
     "name":"X5"
 }
 `
+we place our `car.json` file in the fixtures folder and access it like this :
+
 ```
 describe('access file',()=>{
     it('cypress command is async',()=>{
