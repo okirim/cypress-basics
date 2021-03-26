@@ -341,7 +341,7 @@ describe("commands", () => {
         cy.title().should('eql','home');
 })
 ```
-#### Cookie()
+#### Cookie
 
 ```
 describe("commands", () => {
