@@ -1,10 +1,10 @@
-# A-Basics
+# A- Basics
 
 ## install 
  install Cypress
- `npm install cypress --save-dev && npx cypress open`
+ `npm install cypress - - save- dev && npx cypress open`
 
-## 1-Config cypress
+## 1- Config cypress
 
 #### in cypress.json
 
@@ -23,7 +23,7 @@
 ```
 #### in your `cypress/integration` folder, create new javascript file `*.js`
 
-for auto-completion add at the top of the file or install `npm i --save-dev @types/cypress`
+for auto- completion add at the top of the file or install `npm i - - save- dev @types/cypress`
 ```
 /// <reference types="Cypress"/>
 
@@ -31,7 +31,7 @@ for auto-completion add at the top of the file or install `npm i --save-dev @typ
 
 #### eslint config
 
-install eslint plugin for cypress `npm install eslint-plugin-cypress --save-dev`
+install eslint plugin for cypress `npm install eslint- plugin- cypress - - save- dev`
 
 create .eslintrc.json file and add :
 
@@ -57,7 +57,7 @@ describe("launch the browser", () => {
 ```
 run `npm test`
 
-## 2-hooks 
+## 2- hooks 
 
 ```
  beforeAll(() => {
@@ -80,7 +80,7 @@ update our test file
      cy.visit("/");
 })
 ```
-## 3-Selectors
+## 3- Selectors
 
 ```
  beforeAll(() => {
@@ -110,7 +110,7 @@ describe("selectors", () => {
     // (input attribute)
         cy.get([name='email']);
     // (data attribute)
-        cy.get("[data-test='test-footer']")
+        cy.get("[data- test='test- footer']")
 
     // (siblings next)
         cy.get('.header').next();
@@ -125,7 +125,7 @@ describe("selectors", () => {
     })
 })
 ```
-## 4-Actions
+## 4- Actions
 
 #### click
 
@@ -134,7 +134,7 @@ describe("actions", () => {
     it("simulate click action", () => {
         cy.get('a').first().click();
     // (or)    
-        cy.get("a[href*='cypress-tutorial']").click()
+        cy.get("a[href*='cypress- tutorial']").click()
     // (click all button)
         cy.get("button").click({multiple:true}); 
     })
@@ -179,13 +179,13 @@ describe("actions", () => {
 describe("actions", () => {
     it("simulate select action", () => {
     // (select the value)
-         cy.get('.lang-list').select('php');
+         cy.get('.lang- list').select('php');
 
     // (select the text)
-         cy.get('.lang-list').select('PHP');
+         cy.get('.lang- list').select('PHP');
 })
 ```
-#### checkbox and radio-button
+#### checkbox and radio- button
 
 ```
 describe("actions", () => {
@@ -197,7 +197,7 @@ describe("actions", () => {
     // (uncheck the value)
         cy.get("[value='fr']").uncheck();
 
-    // (radio-button)
+    // (radio- button)
         cy.get("[type='radio']").check();
         cy.get("[type='radio']").uncheck();
 })
@@ -230,7 +230,7 @@ describe("actions", () => {
 
 })
 ```
-## 5-Assertions
+## 5- Assertions
 
 #### should('contain') 
 
@@ -268,7 +268,7 @@ describe("assertions", () => {
 ```
 describe("assertions", () => {
     it("have class", () => {
-       cy.get('#list > li').should('have.class','list-item')
+       cy.get('#list > li').should('have.class','list- item')
 })
 ```
 #### should('have.css')
@@ -295,7 +295,7 @@ describe("assertions", () => {
 ```
 describe("assertions", () => {
     it("have attribute", () => {
-        cy.get('#img-1').should('have.attr','src').and('eql','img1.jpg');
+        cy.get('#img- 1').should('have.attr','src').and('eql','img1.jpg');
 })
 ```
 #### should('have.value')
@@ -307,7 +307,7 @@ describe("assertions", () => {
 })
 ```
 
-## 6-Commands
+## 6- Commands
 
 #### url()
 
@@ -454,7 +454,7 @@ describe("commands", () => {
 })
 })
 ```
-## 7-Async and Sync 
+## 7- Async and Sync 
 
 #### Async
 
@@ -488,7 +488,7 @@ describe('synchronous',()=>{
 })
 ```
 
-## 8-Variables
+## 8- Variables
 
 #### create variable
 
@@ -533,7 +533,7 @@ describe('variables',()=>{
     })
 })
 ```
-## 9-fixtures
+## 9- fixtures
 
 ##### to access the data in Cypress (json, csv, html, text, jpg, png, jpeg, jpg, tif, gif) 
 
@@ -578,7 +578,7 @@ describe('read and write',()=>{
     })
 })
 ```
-## 10-Api Request
+## 10- Api Request
 
 #### GET
 
