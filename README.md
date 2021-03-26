@@ -363,7 +363,6 @@ describe("commands", () => {
 describe("commands", () => {
     it("handle cookies", () => {
       // (to test your website in a specific time)
-         name
          const data=new Date(2020,04,10);
          cy.clock(date);
          cy.visit(/'home.html');
@@ -384,7 +383,7 @@ describe("commands", () => {
 
         user.should('have.property','name','okirim');
          
-    // (we have wrap it before doing any assertion)
+    // (we have to wrap it before doing any assertion)
 
         cy.wrap(user).should('have.property','name','okirim');    
      
