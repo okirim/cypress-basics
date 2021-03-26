@@ -1,5 +1,9 @@
 # A-Basics
 
+## install 
+ install Cypress
+ `npm install cypress --save-dev && npx cypress open`
+
 ## 1-Config cypress
 
 #### in cypress.json
@@ -11,6 +15,7 @@
 ```
 
 #### in your cypress.json 
+
 ```
  "scripts": {
     "test": "cypress open"
@@ -76,6 +81,7 @@ update our test file
 })
 ```
 ## 3-Selectors
+
 ```
  beforeAll(() => {
      cy.visit("/");
@@ -122,6 +128,7 @@ describe("selectors", () => {
 ## 4-Actions
 
 #### click
+
 ```
 describe("actions", () => {
     it("simulate click action", () => {
@@ -144,6 +151,7 @@ describe("actions", () => {
 })
 ```
 #### type
+
 ```
 describe("actions", () => {
     it("simulate type action", () => {
@@ -156,6 +164,7 @@ describe("actions", () => {
 })
 ```
 #### clear
+
 ```
 describe("actions", () => {
     it("simulate clear action", () => {
@@ -165,6 +174,7 @@ describe("actions", () => {
 ```
 
 #### select
+
 ```
 describe("actions", () => {
     it("simulate select action", () => {
@@ -203,6 +213,7 @@ describe("actions", () => {
 ```
 
 #### trigger (click, mouse events)
+
 ```
 describe("actions", () => {
     it("simulate focus and blur", () => {
@@ -220,7 +231,9 @@ describe("actions", () => {
 })
 ```
 ## 5-Assertions
+
 #### should('contain') 
+
 ```
 describe("assertions", () => {
     it("should contain", () => {
@@ -229,6 +242,7 @@ describe("assertions", () => {
 ```
 
 #### should('have.text')
+
 ```
 describe("assertions", () => {
     it("should have text", () => {
@@ -239,6 +253,7 @@ describe("assertions", () => {
 })
 ```
 #### should('be.visible') and should('not.be.visible')
+
 ```
 describe("assertions", () => {
     it("hidden and visible", () => {
@@ -249,6 +264,7 @@ describe("assertions", () => {
 })
 ```
 #### should('have.class')
+
 ```
 describe("assertions", () => {
     it("have class", () => {
@@ -256,6 +272,7 @@ describe("assertions", () => {
 })
 ```
 #### should('have.css')
+
 ```
 describe("assertions", () => {
     it("have css", () => {
@@ -263,6 +280,7 @@ describe("assertions", () => {
 })
 ```
 #### should('be.enabled') and should('be.disabled')
+
 ```
 describe("assertions", () => {
     it("have disabled attribute or not", () => {
@@ -273,6 +291,7 @@ describe("assertions", () => {
 })
 ```
 #### should('have.attr')
+
 ```
 describe("assertions", () => {
     it("have attribute", () => {
@@ -280,6 +299,7 @@ describe("assertions", () => {
 })
 ```
 #### should('have.value')
+
 ```
 describe("assertions", () => {
     it("have value", () => {
@@ -288,7 +308,9 @@ describe("assertions", () => {
 ```
 
 ## 6-Commands
+
 #### url()
+
 ```
 describe("commands", () => {
     it("get url", () => {
@@ -296,6 +318,7 @@ describe("commands", () => {
 })
 ```
 #### title()
+
 ```
 describe("commands", () => {
     it("get title", () => {
@@ -303,6 +326,7 @@ describe("commands", () => {
 })
 ```
 #### go()
+
 ```
 describe("commands", () => {
     it("navigate", () => {
@@ -318,6 +342,7 @@ describe("commands", () => {
 })
 ```
 #### Cookie()
+
 ```
 describe("commands", () => {
     it("handle cookies", () => {
@@ -333,6 +358,7 @@ describe("commands", () => {
 })
 ```
 #### clock()
+
 ```
 describe("commands", () => {
     it("handle cookies", () => {
@@ -345,6 +371,7 @@ describe("commands", () => {
 })
 ```
 #### wrap()
+
 ```
 describe("commands", () => {
     it("wrap data", () => {
@@ -365,6 +392,7 @@ describe("commands", () => {
 })
 ```
 #### invoke()
+
 ```
 describe("commands", () => {
 
@@ -377,6 +405,7 @@ describe("commands", () => {
 })
 ```
 #### then()
+
 ```
 describe("commands", () => {
 
@@ -395,6 +424,7 @@ describe("commands", () => {
 })
 ```
 #### expect() [learn more ](https://www.chaijs.com/api/bdd/)
+
 ```
 describe("commands", () => {
 
@@ -414,6 +444,7 @@ describe("commands", () => {
 })
 ```
 #### each()
+
 ```
 describe("commands", () => {
 
@@ -422,16 +453,14 @@ describe("commands", () => {
     cy.get('button').each(el=>{
         el.click()
     })
-
-  
    }) 
-     
 })
 })
 ```
 ## 7-Async and Sync 
 
 #### Async
+
 ```
 describe('asynchronous',()=>{
     it('cypress command is async',()=>{
@@ -441,6 +470,7 @@ describe('asynchronous',()=>{
 })
 ```
 #### Sync
+
 ```
 describe('synchronous',()=>{
     it('external command are not async',()=>{
@@ -464,6 +494,7 @@ describe('synchronous',()=>{
 ## 8-Variables
 
 #### set variable as aliases
+
 ```
 describe('variables',()=>{
     it('create homePageUrl variable',()=>{
@@ -479,11 +510,11 @@ describe('variables',()=>{
         
         // we can not access homePageUrl in other block
         cy.get('@homePageUrl');//error
-
     })
 })
 ```
 #### access the variable from our blocks
+
 ```
 describe('variables',()=>{
     beforeEach(()=>{
@@ -550,6 +581,7 @@ describe('read and write',()=>{
 ## 10-Api Request
 
 #### GET
+
 ```
 describe("GET REQUEST", () => {
   it("GET REQUEST ALL TODOS", () => {
@@ -598,6 +630,7 @@ describe("GET REQUEST", () => {
 
 ```
 #### POST
+
 ```
 describe("POST REQUEST", () => {
     it('create new post', () => {
@@ -613,6 +646,7 @@ describe("POST REQUEST", () => {
 });
 ```
 #### PUT AND PATCH
+
 ```
 describe("PUT AND PATCH REQUEST", () => {
   it("PUT : update post with id=17", () => {
@@ -632,6 +666,7 @@ describe("PUT AND PATCH REQUEST", () => {
 });
 ```
 #### DELETE
+
 ```
 describe("DELETE REQUEST", () => {
   it("delete post with id=17", () => {
